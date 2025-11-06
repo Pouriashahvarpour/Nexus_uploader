@@ -12,7 +12,7 @@ echo ""
 cd /data
 
 echo "📦 Installing dependencies..."
-pip install -q twine python-dotenv requests
+pip install -q  requests
 
 echo "⬇️  Downloading packages from requirements.txt..."
 pip download -r requirements.txt -d dist/
