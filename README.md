@@ -38,15 +38,22 @@ PASSWORD = "your-password"
 ```bash
 python3 uploader.py
 ```
+
 ### Option 2 – Run with Shell Script (Recommended)
 ```bash
 chmod +x uploader.sh
 ./uploader.sh
 ```
 This script will:
-1. Install dependencies (`twine`, `requests`, `python-dotenv`)
+1. Install dependencies (`requests`)
 2. Download packages listed in `requirements.txt` into `dist/`
 3. Automatically upload all `.whl` and `.tar.gz` files to Nexus
+
+### Option 3 – Run with Docker (Recommended)
+You can also execute the uploader inside a clean Python 3.9 environment using Docker:
+```bash
+docker run -it -v ./:/data/ python:3.9-slim bash /data/uploader.sh
+```
 
 ## 🧠 How It Works
 - The script scans the `DIST_FOLDER` for `.whl` and `.tar.gz` files  
